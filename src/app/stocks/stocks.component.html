@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div class="container">
+  <h2>{{kirbyLeft}}{{title}}{{kirbyRight}}</h2>
+</div>
+<div class="container">
+  <table *ngIf = 'stocks && stocks.length'>
+    <thead>
+    <tr>
+      <th>
+        <button class = 'btn btn-primary'>
+          {{colHead_CompanyName}}
+        </button>
+      </th>
+      <th>
+          <button class = 'btn btn-primary'>
+          {{colHead_StockPrice}}
+        </button>
+      </th>
+      <th>
+        <button class = 'btn btn-primary'>
+          {{colHead_Change}}
+        </button>
+      </th>
+      <th>
+        <button class = 'btn btn-primary'>
+          {{colHead_ChangePercent}}
+        </button>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor = 'let stock of stocks'>
+      <td>{{stock.companyName}}</td>
+      <td>{{stock.stockPrice_current | currency:'USD':true:'1.2-2'}}</td>
+      <td>{{stock.stockPriceHistDif}}</td>
+      <td>{{stock.stockPriceHistDifPercent | number: '1.1-2'}}%</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
