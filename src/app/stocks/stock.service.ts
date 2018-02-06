@@ -8,10 +8,10 @@ import {Observable} from 'rxjs/Observable';
 @Injectable()
 export class StockService {
   stockUrl = 'http://localhost:8000/api/stocks';
-  constructor(private http: HttpClient) {
+  constructor(private $http: HttpClient) {
   }
 
-  getStocks() {
-    return this.http.get('http://localhost:8000/api/stocks');
+  getStocks(): Observable<Stock[]> {
+    return this.$http.get<Stock[]>(this.stockUrl);
   }
 }
