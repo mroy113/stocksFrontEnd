@@ -1,20 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import {StocksComponent} from './stocks/stocks.component';
+import { StocksListComponent } from './stocks/stocksList.component';
+import { StockService } from './stocks/stock.service';
+import { Stock } from './stocks/stock';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    StocksComponent
+    StocksListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [StockService, HttpClientModule],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

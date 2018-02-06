@@ -35,7 +35,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor = 'let stock of stocks'>
+    <tr *ngFor = 'let stock of stockList'>
       <td>{{stock.companyName}}</td>
       <td>{{stock.stockPrice_current | currency:'USD':true:'1.2-2'}}</td>
       <td>{{stock.stockPriceHistDif}}</td>
