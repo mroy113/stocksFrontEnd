@@ -8,8 +8,7 @@ import 'rxjs/add/operator/do';
 
 @Component({
   selector: 'app-stocks',
-  templateUrl: './stocksList.component.html',
-  providers: [StockService]
+  templateUrl: './stocksList.component.html'
 })
 
 export class StocksListComponent implements OnInit {
@@ -19,36 +18,19 @@ export class StocksListComponent implements OnInit {
   title = 'Stock Matrix';
   kirbyLeft = '<(o_O<)';
   kirbyRight = '(>O_o)>';
-  colHead_CompanyName = 'Company';
-  colHead_StockPrice = 'Price';
-  colHead_Change = 'Change';
-  colHead_ChangePercent = 'Change Percent';
+  columnHeaders: String[] = ['', 'Company', 'Price', 'Change', 'Change Percent'];
   stockList: Stock[] = [];
-  tempStock: any;
-  /*
-  ngOnInit(): void {
-    this.stockList = this.stockService.getStocks();
-    console.log('stock list' + this.stockList);
-    console.log('stock list' + this.stockList);
-  }
-  */
+
   getStocks(): Observable<Stock[]> {
-    return this.$http.get<Stock[]>('http://localhost:8000/api/stocks');
- //     .do(data => console.log('All: ' + JSON.stringify(data)))
- //     .catch(this.handleError);
+    return this.$http.get<Stock[]>(this.stockUrl);
   }
   printStocks(): void {
     this.$http.get('http://localhost:8000/api/stocks')
       .subscribe(response => console.log(response));
   }
-  testPrint(tempStock) {
-    console.log(tempStock);
-}
   ngOnInit(): void {
     this.getStocks().subscribe(stocks => this.stockList = stocks);
     this.printStocks();
   }
-
-
 }
 

@@ -12,28 +12,10 @@
   <table class = "table table-sm">
     <thead>
     <tr>
-      <th>
+      <th *ngFor = 'let label of columnHeaders'>
+        {{label}}
       </th>
-      <th>
-        <button class = 'btn btn-primary'>
-          {{colHead_CompanyName}}
-        </button>
-      </th>
-      <th>
-          <button class = 'btn btn-primary'>
-          {{colHead_StockPrice}}
-        </button>
-      </th>
-      <th>
-        <button class = 'btn btn-primary'>
-          {{colHead_Change}}
-        </button>
-      </th>
-      <th>
-        <button class = 'btn btn-primary'>
-          {{colHead_ChangePercent}}
-        </button>
-      </th>
+
     </tr>
     </thead>
     <tbody>
