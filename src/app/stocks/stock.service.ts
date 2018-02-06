@@ -4,7 +4,6 @@ import 'rxjs/add/operator/map';
 import {Stock} from './stock';
 import {Observable} from 'rxjs/Observable';
 
-
 @Injectable()
 export class StockService {
   stockUrl = 'http://localhost:8000/api/stocks';

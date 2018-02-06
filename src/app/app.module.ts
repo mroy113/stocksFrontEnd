@@ -4,8 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { StocksListComponent } from './stocks/stocksList.component';
 import { StockService } from './stocks/stock.service';
-import { Stock } from './stocks/stock';
-
 
 @NgModule({
   declarations: [
