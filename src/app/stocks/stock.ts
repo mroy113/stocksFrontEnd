@@ -1,5 +1,6 @@
 export class Stock {
 
+  public companyNameShort: string;
   public companyName: string;
   public companyURL: string;
   public stockPrice_current: number;
