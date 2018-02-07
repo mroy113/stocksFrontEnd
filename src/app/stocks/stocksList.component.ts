@@ -1,8 +1,6 @@
-import {Component, OnChanges, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Stock} from './stock';
 import {StockService} from './stock.service';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/do';
 
 @Component({
   selector: 'app-stocks',
@@ -10,7 +8,7 @@ import 'rxjs/add/operator/do';
 })
 
 export class StocksListComponent implements OnInit {
-  constructor(private $stockService: StockService) {
+  constructor(public $stockService: StockService) {
   }
   title = '<(o_O<)  Stock Matrix  (>O_o)>';
   columnHeaders: String[] = ['', 'Company', 'Price', 'Change', 'Change Percent'];
