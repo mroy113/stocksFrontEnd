@@ -11,7 +11,13 @@ export class StocksListComponent implements OnInit {
   constructor(public $stockService: StockService) {
   }
   title = '<(o_O<)  Stock Matrix  (>O_o)>';
-  columnHeaders: String[] = ['', 'Company', 'Price', 'Change', 'Change Percent'];
+  columnHeaders: String[] = [
+    ' ',
+    'Company',
+    'Price',
+    'Change',
+    'Change Percent'
+  ];
   stockList: Stock[] = [];
 
   ngOnInit(): void {

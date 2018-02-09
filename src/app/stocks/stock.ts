@@ -15,3 +15,8 @@ export class Stock {
     return ((this.stockPrice_current / this.stockPrice_yesterday) - 1);
   }
 }
+  Stock.prototype.companyName = 'myCompany';
+  Stock.prototype.companyNameShort = 'MYCOM';
+  Stock.prototype.companyURL = 'www.google.com';
+  Stock.prototype.stockPrice_current = 1324.45;
+  Stock.prototype.stockPrice_yesterday = 1502.00;
