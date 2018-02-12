@@ -13,12 +13,13 @@
     <thead>
     <tr>
       <th *ngFor = 'let columnHeaderLabel of columnHeaders'>
-        {{columnHeaderLabel}}
+        <button (click) = "sortList()">
+          {{columnHeaderLabel}}</button>
       </th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor = 'let stock of stockList'>
+    <tr *ngFor = 'let stock of sortedStockList'>
       <td>{{stock.companyNameShort}}</td>
       <td>{{stock.companyName}}</td>
       <td>{{stock.stockPrice_current | currency:'USD':true:'1.2-2'}}</td>
