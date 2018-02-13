@@ -12,19 +12,20 @@
   <table class = "table table-sm">
     <thead>
     <tr>
-      <th *ngFor = 'let columnHeaderLabel of columnHeaders'>
-        <button (click) = "sortList()">
-          {{columnHeaderLabel}}</button>
-      </th>
+      <th></th>
+      <th> <button (click) = 'toggleSortCompanyName()'> Company </button> </th>
+      <th> <button (click) = 'toggleSortPrice()'> Price </button> </th>
+      <th> Change </th>
+      <th> Change % </th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor = 'let stock of sortedStockList'>
+    <tr *ngFor = 'let stock of stockList'>
       <td>{{stock.companyNameShort}}</td>
       <td>{{stock.companyName}}</td>
       <td>{{stock.stockPrice_current | currency:'USD':true:'1.2-2'}}</td>
       <td>{{stock.stockPrice_current - stock.stockPrice_yesterday | currency:'USD':true:'1.2-2'}}</td>
-      <td>{{((stock.stockPrice_current / stock.stockPrice_yesterday) - 1) | number: '1.1-2'}}%</td>
+      <td>{{((stock.stockPrice_current / stock.stockPrice_yesterday) - 1)*100 | number: '1.1-2'}}%</td>
     </tr>
     </tbody>
   </table>
